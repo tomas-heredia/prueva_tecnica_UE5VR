@@ -178,6 +178,10 @@ struct Z_Construct_UClass_UUTelekineticComponent_Statics
 		{ "Category", "UTelekineticComponent" },
 		{ "ModuleRelativePath", "Public/Telekinetic/UTelekineticComponent.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetPullSpeed_MetaData[] = {
+		{ "Category", "Telekinetic|Pulling" },
+		{ "ModuleRelativePath", "Public/Telekinetic/UTelekineticComponent.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PullForce_MetaData[] = {
 		{ "Category", "Telekinetic|Pulling" },
 		{ "ModuleRelativePath", "Public/Telekinetic/UTelekineticComponent.h" },
@@ -205,6 +209,7 @@ struct Z_Construct_UClass_UUTelekineticComponent_Statics
 	static const UECodeGen_Private::FStructPropertyParams NewProp_CurrentHit;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetPhysicsComp;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetActor;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_TargetPullSpeed;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_PullForce;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_HoldDistance;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxPullDistance;
@@ -229,6 +234,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UUTelekineticC
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_CurrentHit = { "CurrentHit", nullptr, (EPropertyFlags)0x0020088000020001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, CurrentHit), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentHit_MetaData), NewProp_CurrentHit_MetaData) }; // 267591329
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_TargetPhysicsComp = { "TargetPhysicsComp", nullptr, (EPropertyFlags)0x00200800000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, TargetPhysicsComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetPhysicsComp_MetaData), NewProp_TargetPhysicsComp_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_TargetActor = { "TargetActor", nullptr, (EPropertyFlags)0x0020080000020001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, TargetActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetActor_MetaData), NewProp_TargetActor_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_TargetPullSpeed = { "TargetPullSpeed", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, TargetPullSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetPullSpeed_MetaData), NewProp_TargetPullSpeed_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_PullForce = { "PullForce", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, PullForce), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PullForce_MetaData), NewProp_PullForce_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_HoldDistance = { "HoldDistance", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, HoldDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_HoldDistance_MetaData), NewProp_HoldDistance_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_MaxPullDistance = { "MaxPullDistance", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, MaxPullDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxPullDistance_MetaData), NewProp_MaxPullDistance_MetaData) };
@@ -247,6 +253,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UUTelekin
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_CurrentHit,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_TargetPhysicsComp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_TargetActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_TargetPullSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_PullForce,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_HoldDistance,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_MaxPullDistance,
@@ -291,10 +298,10 @@ struct Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject
 		{ ETelekinesisState_StaticEnum, TEXT("ETelekinesisState"), &Z_Registration_Info_UEnum_ETelekinesisState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 237828101U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UUTelekineticComponent, UUTelekineticComponent::StaticClass, TEXT("UUTelekineticComponent"), &Z_Registration_Info_UClass_UUTelekineticComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUTelekineticComponent), 1290696420U) },
+		{ Z_Construct_UClass_UUTelekineticComponent, UUTelekineticComponent::StaticClass, TEXT("UUTelekineticComponent"), &Z_Registration_Info_UClass_UUTelekineticComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUTelekineticComponent), 1940907205U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_459522928(TEXT("/Script/PTProject"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_3422028116(TEXT("/Script/PTProject"),
 	Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_Statics::EnumInfo));

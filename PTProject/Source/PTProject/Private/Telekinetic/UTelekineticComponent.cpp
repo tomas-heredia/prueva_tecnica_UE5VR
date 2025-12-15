@@ -5,6 +5,8 @@
 #include "EnhancedInputcomponent.h"
 #include "EnhancedInputSubsystems.h"
 
+#include "DrawDebugHelpers.h"
+
 #include "Kismet/KismetSystemLibrary.h"
 #include "Telekinetic/UTelekineticComponent.h"
 
@@ -38,6 +40,7 @@ void UUTelekineticComponent::BeginPlay()
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PC->InputComponent))
 	{
 		EnhancedInputComponent->BindAction(IA_TGrab, ETriggerEvent::Started, this, &UUTelekineticComponent::TGrab);
+		EnhancedInputComponent->BindAction(IA_TGrab, ETriggerEvent::Completed, this, &UUTelekineticComponent::TGrab);
 	}
 	
 	TArray<UMotionControllerComponent*> MotionControllers;
@@ -65,11 +68,27 @@ void UUTelekineticComponent::TGrab(const FInputActionValue& Value)
 		if (!HitComp || !HitComp->IsSimulatingPhysics()) return;
 
 		TargetActor = CurrentHit.GetActor();
+
 		TargetPhysicsComp = CurrentHit.GetComponent();
 		SetState(ETelekinesisState::Pulling);
 	}
 
 	
+}
+
+void UUTelekineticComponent::TRelece(const FInputActionValue& Value)
+{
+	if (CurrentState == ETelekinesisState::Pulling)
+	{
+		TargetActor = nullptr;
+		TargetPhysicsComp = nullptr;
+		SetState(ETelekinesisState::Idle);
+	}
+	if (CurrentState == ETelekinesisState::Holding)
+	{
+		
+		SetState(ETelekinesisState::Cooldown);
+	}
 }
 
 
@@ -86,7 +105,44 @@ bool UUTelekineticComponent::GetTracerOriginAndDirection(FHitResult& Hit) const
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(GetOwner());
 
-	return GetWorld()->LineTraceSingleByChannel(Hit,Start,End,ECC_Visibility,Params);
+	const bool bHit = GetWorld()->LineTraceSingleByChannel(
+		Hit,
+		Start,
+		End,
+		ECC_Visibility,
+		Params
+	);
+
+#if ENABLE_DRAW_DEBUG
+	// Línea del trace
+	DrawDebugLine(
+		GetWorld(),
+		Start,
+		bHit ? Hit.ImpactPoint : End,
+		bHit ? FColor::Red : FColor::Green,
+		false,
+		0.05f,
+		0,
+		1.5f
+	);
+
+	// Punto de impacto
+	if (bHit)
+	{
+		DrawDebugSphere(
+			GetWorld(),
+			Hit.ImpactPoint,
+			8.f,
+			12,
+			FColor::Red,
+			false,
+			0.05f
+		);
+	}
+#endif
+
+	return bHit;
+
 }
 
 bool UUTelekineticComponent::FindTelekineticTarget() const
@@ -124,7 +180,7 @@ void UUTelekineticComponent::EnterState(ETelekinesisState State)
 		break;
 
 	case ETelekinesisState::Holding:
-		
+		StartHolding();
 		break;
 
 	case ETelekinesisState::Cooldown:
@@ -143,6 +199,7 @@ void UUTelekineticComponent::ExitState(ETelekinesisState State)
 	case ETelekinesisState::Pulling:
 		if (TargetPhysicsComp)
 		{
+			TargetPhysicsComp->SetSimulatePhysics(false);
 			TargetPhysicsComp->SetEnableGravity(true);
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("sale"));
 			TargetPhysicsComp->SetPhysicsLinearVelocity(FVector::ZeroVector);
@@ -151,6 +208,7 @@ void UUTelekineticComponent::ExitState(ETelekinesisState State)
 
 	case ETelekinesisState::Holding:
 		
+
 		break;
 
 	default:
@@ -178,29 +236,29 @@ void UUTelekineticComponent::UpdateState(float DeltaTime) {
 
 void UUTelekineticComponent::UpdatePullingState(float DeltaTime)
 {
-	if (!TargetPhysicsComp || !HandMC) return;
-
+	if (!TargetPhysicsComp || !HandMC) {
+		TargetPhysicsComp = nullptr;
+		TargetActor = nullptr;
+		SetState(ETelekinesisState::Idle);
+		return;
+	}
+	
 	FVector HandLocation = HandMC->GetComponentLocation();
 	FVector ObjLocation = TargetPhysicsComp->GetComponentLocation();
 
-	FVector ToHand = HandLocation - ObjLocation;
-	float Distance = ToHand.Size();
-
-
-	if (Distance <= HoldDistance)
+	FVector NewLocation = FMath::VInterpTo(ObjLocation, HandLocation, DeltaTime, TargetPullSpeed);
+	
+	TargetPhysicsComp->SetWorldLocation(NewLocation);
+	if (FVector::Dist(NewLocation, HandLocation) <= HoldDistance)
 	{
 		SetState(ETelekinesisState::Holding);
-		return;
 	}
 
-	FVector Direction = ToHand / Distance;
-	float ForceScale = FMath::Clamp(Distance / MaxPullDistance, 0.3f, 1.0f);
+}
 
-	const FVector Gravity = FVector(0, 0, GetWorld()->GetGravityZ());
-	TargetPhysicsComp->AddForce(-Gravity * TargetPhysicsComp->GetMass());
-
-	TargetPhysicsComp->AddForceAtLocation(
-		Direction * PullForce * ForceScale * TargetPhysicsComp->GetMass(),TargetPhysicsComp->GetCenterOfMass());
+void UUTelekineticComponent::StartHolding()
+{
+	
 }
 
 void UUTelekineticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)

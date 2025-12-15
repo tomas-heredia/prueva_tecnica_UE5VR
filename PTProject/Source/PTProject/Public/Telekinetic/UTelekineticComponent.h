@@ -73,6 +73,8 @@ protected:
 #pragma endregion
 
 #pragma region Pulling
+	UPROPERTY(EditAnywhere, Category = "Telekinetic|Pulling")
+	float TargetPullSpeed = 800.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Telekinetic|Pulling")
 	float PullForce = 800.f;
@@ -85,6 +87,7 @@ protected:
 #pragma endregion
 	
 	void TGrab(const FInputActionValue& Value);
+	void TRelece(const FInputActionValue& Value);
 	bool GetTracerOriginAndDirection(FHitResult& Hit) const;
 	bool FindTelekineticTarget() const;
 
@@ -95,6 +98,7 @@ protected:
 
 	void UpdatePullingState(float DeltaTime);
 	
+	void StartHolding();
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
