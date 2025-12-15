@@ -1,0 +1,9 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.PTProject.gen.cpp.obj": [
+			"PTProject.init.gen.cpp.obj",
+			"UTelekineticComponent.gen.cpp.obj"
+		]
+	}
+}

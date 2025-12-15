@@ -9,6 +9,7 @@
 
 class UInputAction;
 class UInputMappingContext;
+class UMotionControllerComponent;
 UENUM(BlueprintType)
 enum class ETelekinesisState : uint8
 {
@@ -36,6 +37,9 @@ protected:
 	APawn* OwnerPawn;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	APlayerController* PC;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	ETelekinesisState CurrentState = ETelekinesisState::Idle;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
@@ -49,10 +53,48 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Telekinetic|Trace")
 	float TraceDistance = 1500.f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Telekinetic|Trace")
+	TEnumAsByte<ECollisionChannel> TraceChannel = ECC_PhysicsBody;
+	
+	UPROPERTY(EditAnywhere, Category = "Telekinesis")
+	EControllerHand PreferredHand = EControllerHand::Right;
+
+	UPROPERTY(VisibleAnywhere)
+	UMotionControllerComponent* HandMC;
+
+	UPROPERTY(VisibleAnywhere)
+	FHitResult CurrentHit;
+	UPROPERTY(VisibleAnywhere)
+	UPrimitiveComponent* TargetPhysicsComp;
+
+	UPROPERTY(VisibleAnywhere)
+	AActor* TargetActor;
 
 #pragma endregion
-	void TGrab(const FInputActionValue& Value);
 
+#pragma region Pulling
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Telekinetic|Pulling")
+	float PullForce = 800.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Telekinetic|Pulling")
+	float HoldDistance = 50.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Telekinetic|Pulling")
+	float MaxPullDistance = 1500.f;
+#pragma endregion
+	
+	void TGrab(const FInputActionValue& Value);
+	bool GetTracerOriginAndDirection(FHitResult& Hit) const;
+	bool FindTelekineticTarget() const;
+
+	void SetState(ETelekinesisState NewState);
+	void EnterState(ETelekinesisState State);
+	void UpdateState(float DeltaTime);
+	void ExitState(ETelekinesisState State);
+
+	void UpdatePullingState(float DeltaTime);
+	
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
