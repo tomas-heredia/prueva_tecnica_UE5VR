@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"T:\\prueva_tecnica_UE5VR\\PTProject\\Source\\PTProject\\PTProject.Build.cs",
+		"T:\\prueva_tecnica_UE5VR\\PTProject\\Source\\PTProject.Target.cs",
+		"T:\\prueva_tecnica_UE5VR\\PTProject\\Source\\PTProjectEditor.Target.cs"
+	],
+	"EngineVersion": "5.6.1"
+}

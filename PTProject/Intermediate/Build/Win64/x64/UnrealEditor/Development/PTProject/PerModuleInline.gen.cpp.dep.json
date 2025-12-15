@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "t:\\prueva_tecnica_ue5vr\\ptproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\ptproject\\permoduleinline.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "t:\\prueva_tecnica_ue5vr\\ptproject\\intermediate\\build\\win64\\x64\\ptprojecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_3.h.pch",
+        "Includes": [
+            "t:\\prueva_tecnica_ue5vr\\ptproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\ptproject\\definitions.ptproject.h",
+            "t:\\unreal5.3.2\\ue_5.6\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

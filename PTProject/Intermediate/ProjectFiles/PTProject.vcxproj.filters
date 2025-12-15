@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\PTProject.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\PTProject.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\PTProjectEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Config\Mac">
+      <UniqueIdentifier>{C34A53DE-7A2E-391F-9292-A84444E41B18}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\Mac\MacEngine.ini">
+      <Filter>Config\Mac</Filter>
+    </None>
+    <Filter Include="Config\VisionOS">
+      <UniqueIdentifier>{54FB6262-BE34-3FD1-8608-DAEF798947B6}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\VisionOS\VisionOSEngine.ini">
+      <Filter>Config\VisionOS</Filter>
+    </None>
+    <Filter Include="Source\PTProject">
+      <UniqueIdentifier>{17E3E69C-61B6-39BC-B2DE-E0A425A46191}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\PTProject\PTProject.Build.cs">
+      <Filter>Source\PTProject</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\PTProject\PTProject.cpp">
+      <Filter>Source\PTProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PTProject\PTProject.h">
+      <Filter>Source\PTProject</Filter>
+    </ClInclude>
+    <Filter Include="Source\PTProject\Private">
+      <UniqueIdentifier>{FC26AAFF-628C-360A-B0E5-E891EBD6306C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PTProject\Private\Telekinetic">
+      <UniqueIdentifier>{44F3920C-8503-3D37-BC07-AA4EB72F5279}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PTProject\Private\Telekinetic\UTelekineticComponent.cpp">
+      <Filter>Source\PTProject\Private\Telekinetic</Filter>
+    </ClCompile>
+    <Filter Include="Source\PTProject\Public">
+      <UniqueIdentifier>{5D894EA3-02FE-33E3-8FBC-5E39B905334E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PTProject\Public\Telekinetic">
+      <UniqueIdentifier>{CE0716C0-8B5D-3EA6-A32E-6B353C30A586}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\PTProject\Public\Telekinetic\UTelekineticComponent.h">
+      <Filter>Source\PTProject\Public\Telekinetic</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
