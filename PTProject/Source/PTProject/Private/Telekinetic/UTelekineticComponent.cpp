@@ -100,7 +100,6 @@ void UUTelekineticComponent::TObjectGrab(const FInputActionValue& Value)
 	if (holdObject)
 		return;
 	HoldCount++;
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, TEXT("Object Held"));
 	holdObject = true;
 	GetWorld()->GetTimerManager().ClearTimer(CooldownFloating);
 	
@@ -117,7 +116,6 @@ void UUTelekineticComponent::TObjectReleace(const FInputActionValue& Value)
 	HoldCount = FMath::Max(0, HoldCount - 1);
 	holdObject = false;
 
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, TEXT("Object Releace"));
 	if (HoldCount == 0)
 	{
 
@@ -139,30 +137,15 @@ bool UUTelekineticComponent::GetTracerOriginAndDirection(FHitResult& Hit) const
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(GetOwner());
 
-	const bool bHit = GetWorld()->LineTraceSingleByChannel(
-		Hit,
-		Start,
-		End,
-		ECC_Visibility,
-		Params
-	);
+	const bool bHit = GetWorld()->LineTraceSingleByChannel(Hit,Start,End,ECC_Visibility,Params);
 
 #if ENABLE_DRAW_DEBUG
-	// Línea del trace
+	
 	DrawDebugLine(GetWorld(),Start,bHit ? Hit.ImpactPoint : End,bHit ? FColor::Red : FColor::Green,false,0.05f,0,1.5f);
 
-	// Punto de impacto
 	if (bHit)
 	{
-		DrawDebugSphere(
-			GetWorld(),
-			Hit.ImpactPoint,
-			8.f,
-			12,
-			FColor::Red,
-			false,
-			0.05f
-		);
+		DrawDebugSphere(GetWorld(),Hit.ImpactPoint,8.f,12,FColor::Red,false,0.05f);
 	}
 #endif
 
@@ -296,14 +279,13 @@ void UUTelekineticComponent::OnCooldownFloatingFinished()
 {
 
 	if (!TargetPhysicsComp) return;
+	if (IsObjectHeldByAnyHand()) return;
 	
-	if (!holdObject)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("floating end"));
-		TargetPhysicsComp->SetSimulatePhysics(true);
-		TargetPhysicsComp->SetEnableGravity(true);
-		SetState(ETelekinesisState::Idle);
-	}
+	
+	TargetPhysicsComp->SetSimulatePhysics(true);
+	TargetPhysicsComp->SetEnableGravity(true);
+	SetState(ETelekinesisState::Idle);
+	
 	}
 
 void UUTelekineticComponent::cooldown()
@@ -325,6 +307,18 @@ void UUTelekineticComponent::endCooldown()
 }
 
 
+bool UUTelekineticComponent::IsObjectHeldByAnyHand() const
+{
+	if (!TargetPhysicsComp)
+		return false;
+
+	USceneComponent* Parent = TargetPhysicsComp->GetAttachParent();
+	if (!Parent)
+		return false;
+
+
+	return Parent->IsA<UMotionControllerComponent>();
+}
 
 void UUTelekineticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {

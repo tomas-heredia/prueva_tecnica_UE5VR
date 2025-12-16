@@ -130,6 +130,8 @@ protected:
 
 	void CooldownFloatingStart();
 	void OnCooldownFloatingFinished();
+
+	bool IsObjectHeldByAnyHand() const;
 	
 	void cooldown();
 	void endCooldown();

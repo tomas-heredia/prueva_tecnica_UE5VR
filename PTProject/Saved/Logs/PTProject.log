@@ -3199,3 +3199,219 @@ Detoured run took 1.7s
 [2025.12.16-13.02.51:013][281]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 35284.175781
 [2025.12.16-13.02.52:015][285]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
 [2025.12.16-13.02.52:015][285]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 35284.847656, Update Interval: 306.059143
+[2025.12.16-13.06.08:510][874]LogDerivedDataCache: C:/Users/tomas/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:00.005 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 0 files in 1 folders with total size 0 MiB.
+[2025.12.16-13.08.35:780][315]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 35627.910156
+[2025.12.16-13.08.36:782][318]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.12.16-13.08.36:782][318]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 35628.578125, Update Interval: 330.469666
+[2025.12.16-13.14.58:864][464]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 36009.789062
+[2025.12.16-13.14.59:863][468]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.12.16-13.14.59:863][468]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 36010.453125, Update Interval: 314.927216
+[2025.12.16-13.21.02:950][556]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 36372.707031
+[2025.12.16-13.21.03:949][559]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.12.16-13.21.03:949][559]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 36373.371094, Update Interval: 332.582794
+[2025.12.16-13.27.07:382][649]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 36735.964844
+[2025.12.16-13.27.08:381][652]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.12.16-13.27.08:381][652]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 36736.628906, Update Interval: 300.776398
+[2025.12.16-13.32.40:831][608]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 37068.378906
+[2025.12.16-13.32.43:037][611]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.12.16-13.32.43:037][611]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 37070.457031, Update Interval: 321.608948
+[2025.12.16-13.32.47:169][656]LogLiveCoding: Display: Starting Live Coding compile.
+[2025.12.16-13.35.09:651][127]LogLiveCoding: Display: UbaCli v5.7.0-Uba_v1.0.0-43528563 (Rootdir: "C:\ProgramData\Epic\UbaCli", StoreCapacity: 0Gb)
+
+---- Starting trace: Debug0f32c0d2-e8e3-489b-b372-2e49dfda3fa2 ----
+Running C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\Hostx64\x64\link.exe @C:\Users\tomas\AppData\Local\Temp\B0B4.tmp
+   Creando biblioteca T:\prueva_tecnica_UE5VR\PTProject\Binaries\Win64\UnrealEditor-PTProject.patch_12.lib y objeto T:\prueva_tecnica_UE5VR\PTProject\Binaries\Win64\UnrealEditor-PTProject.patch_12.exp
+Detoured run took 3.4s
+[2025.12.16-13.35.12:903][133]LogUObjectHash: Compacting FUObjectHashTables data took   4.49ms
+[2025.12.16-13.35.14:770][134]Display: Reload/Re-instancing Complete: 1 package changed, 1 class unchanged, 1 enum unchanged
+[2025.12.16-13.35.14:770][134]LogLiveCoding: Display: Live coding succeeded
+[2025.12.16-13.35.15:708][170]LogDebuggerCommands: Repeating last play command: VR Preview
+[2025.12.16-13.35.15:771][170]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.12.16-13.35.15:796][170]LogPlayLevel: Creating play world package: /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap
+[2025.12.16-13.35.15:893][170]LogPlayLevel: PIE: StaticDuplicateObject took: (0.096835s)
+[2025.12.16-13.35.15:893][170]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/VRTemplate/Maps/VRTemplateMap.VRTemplateMap to /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap.VRTemplateMap (0.097341s)
+[2025.12.16-13.35.16:170][170]LogUObjectHash: Compacting FUObjectHashTables data took   3.76ms
+[2025.12.16-13.35.16:181][170]LogChaosDD: Creating Chaos Debug Draw Scene for world VRTemplateMap
+[2025.12.16-13.35.16:247][170]LogRenderer: SceneCulling instance hierarchy is disabled as UseNanite(PCD3D_SM6) returned false, for scene: 'World /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap.VRTemplateMap'.
+[2025.12.16-13.35.16:281][170]LogPlayLevel: PIE: World Init took: (0.101734s)
+[2025.12.16-13.35.16:287][170]LogAudio: Display: Creating Audio Device:                 Id: 20, Scope: Unique, Realtime: True
+[2025.12.16-13.35.16:289][170]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.12.16-13.35.16:289][170]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.12.16-13.35.16:289][170]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.12.16-13.35.16:290][170]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.12.16-13.35.16:290][170]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.12.16-13.35.16:290][170]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.12.16-13.35.16:290][170]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.12.16-13.35.16:290][170]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.12.16-13.35.16:293][170]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.12.16-13.35.16:293][170]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.12.16-13.35.16:293][170]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.12.16-13.35.16:301][170]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.12.16-13.35.16:378][170]LogAudioMixer: Display: Using Audio Hardware Device Auriculares (Oculus Virtual Audio Device)
+[2025.12.16-13.35.16:388][170]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.12.16-13.35.16:388][170]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.12.16-13.35.16:391][170]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.12.16-13.35.16:394][170]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=20
+[2025.12.16-13.35.16:394][170]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=20
+[2025.12.16-13.35.16:398][170]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=20
+[2025.12.16-13.35.16:398][170]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=20
+[2025.12.16-13.35.16:400][170]LogInit: FAudioDevice initialized with ID 20.
+[2025.12.16-13.35.16:400][170]LogAudio: Display: Audio Device (ID: 20) registered with world 'VRTemplateMap'.
+[2025.12.16-13.35.16:401][170]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 20
+[2025.12.16-13.35.16:463][170]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.12.16-13.35.16:807][170]LogLoad: Game class is 'VRGameMode_C'
+[2025.12.16-13.35.16:880][170]LogWorld: Bringing World /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap.VRTemplateMap up for play (max tick rate 0) at 2025.12.16-10.35.16
+[2025.12.16-13.35.16:883][170]LogWorld: Bringing up level for play took: 0.065262
+[2025.12.16-13.35.16:915][170]LogOnline: OSS: Created online subsystem instance for: :Context_21
+[2025.12.16-13.35.17:002][170]LogSlate: New Slate User Created. Platform User Id 8, User Index 8, Is Virtual User: 1
+[2025.12.16-13.35.17:002][170]LogSlate: Slate User Registered.  User Index 8, Is Virtual User: 1
+[2025.12.16-13.35.17:030][170]LogEnhancedInput: Warning: Called AddMappingContext with a null Mapping Context! No changes have been applied.
+[2025.12.16-13.35.17:032][170]xr.SecondaryScreenPercentage.HMDRenderTarget = "100"
+[2025.12.16-13.35.17:087][170]PIE: Server logged in
+[2025.12.16-13.35.17:097][170]PIE: Play in editor total start time 1,357 seconds.
+[2025.12.16-13.35.17:245][170]LogHMD: Warning: Requesting 10 bit swapchain, but not supported: fall back to 8bpc
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Grab has a Description, "", which exactly matches the Description already used by Action IA_TGrab.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Grab, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Hand_Point_Right has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_Point_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Hand_ThumbUp_Left has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_ThumbUp_Left, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Hand_ThumbUp_Right has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_ThumbUp_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Hand_Grasp_Left has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_Grasp_Left, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Hand_Grasp_Right has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_Grasp_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Hand_IndexCurl_Left has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_IndexCurl_Left, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Hand_IndexCurl_Right has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_IndexCurl_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Mapping Context IMC_Menu has a Description, "", which exactly matches the Description already used by Input Mapping Context IMC_Hands.  Identical localized descriptions are not allowed by OpenXR.  The FName of this mapping context IMC_Menu, which is unique, will replace the duplicated localized string so the Input Mapping Context functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Menu_Interact_Right_Pressed has a Description, "", which exactly matches the Description already used by Action IA_Menu_Interact_Left_Pressed.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Menu_Interact_Right_Pressed, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Menu_Cursor_Left has a Description, "", which exactly matches the Description already used by Action IA_Menu_Interact_Left_Pressed.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Menu_Cursor_Left, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Action IA_Menu_Cursor_Right has a Description, "", which exactly matches the Description already used by Action IA_Menu_Interact_Left_Pressed.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Menu_Cursor_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Mapping Context IMC_Weapon_Left has a Description, "", which exactly matches the Description already used by Input Mapping Context IMC_Hands.  Identical localized descriptions are not allowed by OpenXR.  The FName of this mapping context IMC_Weapon_Left, which is unique, will replace the duplicated localized string so the Input Mapping Context functions but it will not localize correctly.
+[2025.12.16-13.35.20:592][503]LogHMD: Warning: Input Mapping Context IMC_Weapon_Right has a Description, "", which exactly matches the Description already used by Input Mapping Context IMC_Hands.  Identical localized descriptions are not allowed by OpenXR.  The FName of this mapping context IMC_Weapon_Right, which is unique, will replace the duplicated localized string so the Input Mapping Context functions but it will not localize correctly.
+[2025.12.16-13.35.53:690][442]LogHMD: Warning: GetPlayAreaBounds xrGetReferenceSpaceBoundsRect with reference space XR_REFERENCE_SPACE_TYPE_STAGE failed with result XR_SPACE_BOUNDS_UNAVAILABLE. Returning zero vector.
+[2025.12.16-13.37.59:804][991]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.12.16-13.37.59:804][991]LogWorld: BeginTearingDown for /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap
+[2025.12.16-13.37.59:817][991]LogCrowdFollowing: Warning: Unable to find RecastNavMesh instance while trying to create UCrowdManager instance
+[2025.12.16-13.37.59:900][991]LogSlate: Window 'PTProject Preview [NetMode: Standalone 0]  (64-bit/PC D3D SM6) OpenXR Oculus (1.115.0)' being destroyed
+[2025.12.16-13.37.59:911][991]LogWorld: UWorld::CleanupWorld for VRTemplateMap, bSessionEnded=true, bCleanupResources=true
+[2025.12.16-13.37.59:914][991]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.16-13.37.59:932][991]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.12.16-13.37.59:948][991]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.16-13.38.00:080][991]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.12.16-13.38.00:082][991]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 20
+[2025.12.16-13.38.00:082][991]LogAudioMixer: Display: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=20, StreamState=4
+[2025.12.16-13.38.00:090][991]LogAudioMixer: Display: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=20, StreamState=2
+[2025.12.16-13.38.00:111][991]LogSlate: Slate User Unregistered.  User Index 8
+[2025.12.16-13.38.00:111][991]LogSlate: Slate User Destroyed.  User Index 8, Is Virtual User: 1
+[2025.12.16-13.38.00:116][991]LogUObjectHash: Compacting FUObjectHashTables data took   1.96ms
+[2025.12.16-13.38.00:314][992]LogPlayLevel: Display: Destroying online subsystem :Context_21
+[2025.12.16-13.38.36:960][136]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 37420.703125
+[2025.12.16-13.38.37:961][139]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.12.16-13.38.37:961][139]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 37421.367188, Update Interval: 350.388489
+[2025.12.16-13.45.21:066][348]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 37824.066406
+[2025.12.16-13.45.22:068][351]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.12.16-13.45.22:068][351]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 37824.730469, Update Interval: 302.613007
+[2025.12.16-13.49.00:087][ 59]LogLiveCoding: Display: Starting Live Coding compile.
+[2025.12.16-13.50.53:621][750]LogLiveCoding: Display: UbaCli v5.7.0-Uba_v1.0.0-43528563 (Rootdir: "C:\ProgramData\Epic\UbaCli", StoreCapacity: 0Gb)
+
+---- Starting trace: Debug9b78cddd-4f54-47b6-b10a-da5d362d8b9c ----
+Running C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\Hostx64\x64\link.exe @C:\Users\tomas\AppData\Local\Temp\1FC7.tmp
+   Creando biblioteca T:\prueva_tecnica_UE5VR\PTProject\Binaries\Win64\UnrealEditor-PTProject.patch_13.lib y objeto T:\prueva_tecnica_UE5VR\PTProject\Binaries\Win64\UnrealEditor-PTProject.patch_13.exp
+Detoured run took 1.8s
+[2025.12.16-13.50.56:627][767]LogUObjectHash: Compacting FUObjectHashTables data took   4.69ms
+[2025.12.16-13.50.58:530][768]Display: Reload/Re-instancing Complete: 1 package changed, 1 class unchanged, 1 enum unchanged
+[2025.12.16-13.50.58:532][768]LogLiveCoding: Display: Live coding succeeded
+[2025.12.16-13.51.09:209][321]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 38170.023438
+[2025.12.16-13.51.09:655][335]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.12.16-13.51.09:655][335]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 38170.437500, Update Interval: 349.013336
+[2025.12.16-13.51.13:007][440]LogUObjectHash: Compacting FUObjectHashTables data took   5.37ms
+[2025.12.16-13.51.14:869][495]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.12.16-13.51.14:955][495]OBJ SavePackage: Generating thumbnails for [2] asset(s) in package [/Game/VRTemplate/Blueprints/VRPawn] ([2] browsable assets)...
+[2025.12.16-13.51.15:003][495]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn]
+[2025.12.16-13.51.15:003][495]OBJ SavePackage: Finished generating thumbnails for package [/Game/VRTemplate/Blueprints/VRPawn]
+[2025.12.16-13.51.15:003][495]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../prueva_tecnica_UE5VR/PTProject/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2025.12.16-13.51.15:179][495]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2025.12.16-13.51.15:180][495]LogSavePackage: Moving '../../../../../prueva_tecnica_UE5VR/PTProject/Saved/VRPawnA487537642D4DE0D010F20862335CB69.tmp' to '../../../../../prueva_tecnica_UE5VR/PTProject/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2025.12.16-13.51.15:217][495]LogFileHelpers: InternalPromptForCheckoutAndSave took 349.097 ms (total: 1.98 sec)
+[2025.12.16-13.51.15:357][495]LogContentValidation: Display: Starting to validate 1 assets
+[2025.12.16-13.51.15:357][495]LogContentValidation: Enabled validators:
+[2025.12.16-13.51.15:358][495]LogContentValidation: 	/Script/DataValidation.EditorValidator_Material
+[2025.12.16-13.51.15:358][495]LogContentValidation: 	/Script/DataValidation.DirtyFilesChangelistValidator
+[2025.12.16-13.51.15:360][495]LogContentValidation: 	/Script/DataValidation.EditorValidator_Localization
+[2025.12.16-13.51.15:360][495]LogContentValidation: 	/Script/DataValidation.PackageFileValidator
+[2025.12.16-13.51.15:360][495]LogContentValidation: 	/Script/DataValidation.WorldPartitionChangelistValidator
+[2025.12.16-13.51.15:360][495]LogContentValidation: 	/Script/InputBlueprintNodes.EnhancedInputUserWidgetValidator
+[2025.12.16-13.51.15:362][495]AssetCheck: /Game/VRTemplate/Blueprints/VRPawn Validating asset
+[2025.12.16-13.51.18:231][666]LogDebuggerCommands: Repeating last play command: VR Preview
+[2025.12.16-13.51.18:277][666]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.12.16-13.51.18:295][666]LogPlayLevel: Creating play world package: /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap
+[2025.12.16-13.51.18:346][666]LogPlayLevel: PIE: StaticDuplicateObject took: (0.050771s)
+[2025.12.16-13.51.18:346][666]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/VRTemplate/Maps/VRTemplateMap.VRTemplateMap to /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap.VRTemplateMap (0.051055s)
+[2025.12.16-13.51.18:505][666]LogUObjectHash: Compacting FUObjectHashTables data took   4.38ms
+[2025.12.16-13.51.18:514][666]LogChaosDD: Creating Chaos Debug Draw Scene for world VRTemplateMap
+[2025.12.16-13.51.18:565][666]LogRenderer: SceneCulling instance hierarchy is disabled as UseNanite(PCD3D_SM6) returned false, for scene: 'World /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap.VRTemplateMap'.
+[2025.12.16-13.51.18:583][666]LogPlayLevel: PIE: World Init took: (0.069627s)
+[2025.12.16-13.51.18:584][666]LogAudio: Display: Creating Audio Device:                 Id: 21, Scope: Unique, Realtime: True
+[2025.12.16-13.51.18:587][666]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.12.16-13.51.18:587][666]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.12.16-13.51.18:587][666]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.12.16-13.51.18:587][666]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.12.16-13.51.18:587][666]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.12.16-13.51.18:587][666]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.12.16-13.51.18:587][666]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.12.16-13.51.18:587][666]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.12.16-13.51.18:589][666]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.12.16-13.51.18:589][666]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.12.16-13.51.18:589][666]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.12.16-13.51.18:595][666]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.12.16-13.51.18:642][666]LogAudioMixer: Display: Using Audio Hardware Device Auriculares (Oculus Virtual Audio Device)
+[2025.12.16-13.51.18:658][666]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.12.16-13.51.18:658][666]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.12.16-13.51.18:660][666]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.12.16-13.51.18:669][666]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=21
+[2025.12.16-13.51.18:670][666]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=21
+[2025.12.16-13.51.18:672][666]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=21
+[2025.12.16-13.51.18:673][666]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=21
+[2025.12.16-13.51.18:673][666]LogInit: FAudioDevice initialized with ID 21.
+[2025.12.16-13.51.18:673][666]LogAudio: Display: Audio Device (ID: 21) registered with world 'VRTemplateMap'.
+[2025.12.16-13.51.18:675][666]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 21
+[2025.12.16-13.51.18:720][666]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.12.16-13.51.19:054][666]LogLoad: Game class is 'VRGameMode_C'
+[2025.12.16-13.51.19:082][666]LogWorld: Bringing World /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap.VRTemplateMap up for play (max tick rate 0) at 2025.12.16-10.51.19
+[2025.12.16-13.51.19:084][666]LogWorld: Bringing up level for play took: 0.029078
+[2025.12.16-13.51.19:105][666]LogOnline: OSS: Created online subsystem instance for: :Context_22
+[2025.12.16-13.51.19:122][666]LogSlate: New Slate User Created. Platform User Id 8, User Index 8, Is Virtual User: 1
+[2025.12.16-13.51.19:124][666]LogSlate: Slate User Registered.  User Index 8, Is Virtual User: 1
+[2025.12.16-13.51.19:144][666]xr.SecondaryScreenPercentage.HMDRenderTarget = "100"
+[2025.12.16-13.51.19:178][666]PIE: Server logged in
+[2025.12.16-13.51.19:186][666]PIE: Play in editor total start time 0,938 seconds.
+[2025.12.16-13.51.19:319][666]LogHMD: Warning: Requesting 10 bit swapchain, but not supported: fall back to 8bpc
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Grab has a Description, "", which exactly matches the Description already used by Action IA_TGrab.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Grab, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Hand_Point_Right has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_Point_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Hand_ThumbUp_Left has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_ThumbUp_Left, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Hand_ThumbUp_Right has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_ThumbUp_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Hand_Grasp_Left has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_Grasp_Left, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Hand_Grasp_Right has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_Grasp_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Hand_IndexCurl_Left has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_IndexCurl_Left, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Hand_IndexCurl_Right has a Description, "", which exactly matches the Description already used by Action IA_Hand_Point_Left.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Hand_IndexCurl_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Mapping Context IMC_Menu has a Description, "", which exactly matches the Description already used by Input Mapping Context IMC_Hands.  Identical localized descriptions are not allowed by OpenXR.  The FName of this mapping context IMC_Menu, which is unique, will replace the duplicated localized string so the Input Mapping Context functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Menu_Interact_Right_Pressed has a Description, "", which exactly matches the Description already used by Action IA_Menu_Interact_Left_Pressed.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Menu_Interact_Right_Pressed, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Menu_Cursor_Left has a Description, "", which exactly matches the Description already used by Action IA_Menu_Interact_Left_Pressed.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Menu_Cursor_Left, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Action IA_Menu_Cursor_Right has a Description, "", which exactly matches the Description already used by Action IA_Menu_Interact_Left_Pressed.  Identical localized descriptions are not allowed by OpenXR.  The FName of this action IA_Menu_Cursor_Right, which is unique, will replace the localized string so that the input Action functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Mapping Context IMC_Weapon_Left has a Description, "", which exactly matches the Description already used by Input Mapping Context IMC_Hands.  Identical localized descriptions are not allowed by OpenXR.  The FName of this mapping context IMC_Weapon_Left, which is unique, will replace the duplicated localized string so the Input Mapping Context functions but it will not localize correctly.
+[2025.12.16-13.51.19:917][716]LogHMD: Warning: Input Mapping Context IMC_Weapon_Right has a Description, "", which exactly matches the Description already used by Input Mapping Context IMC_Hands.  Identical localized descriptions are not allowed by OpenXR.  The FName of this mapping context IMC_Weapon_Right, which is unique, will replace the duplicated localized string so the Input Mapping Context functions but it will not localize correctly.
+[2025.12.16-13.51.35:946][706]LogHMD: Warning: GetPlayAreaBounds xrGetReferenceSpaceBoundsRect with reference space XR_REFERENCE_SPACE_TYPE_STAGE failed with result XR_SPACE_BOUNDS_UNAVAILABLE. Returning zero vector.
+[2025.12.16-13.52.40:215][261]LogHMD: Warning: GetPlayAreaBounds xrGetReferenceSpaceBoundsRect with reference space XR_REFERENCE_SPACE_TYPE_STAGE failed with result XR_SPACE_BOUNDS_UNAVAILABLE. Returning zero vector.
+[2025.12.16-13.52.55:800][280]LogWindowsDesktop: Alt-F4 pressed!
+[2025.12.16-13.52.55:839][280]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.12.16-13.52.55:839][280]LogWorld: BeginTearingDown for /Game/VRTemplate/Maps/UEDPIE_0_VRTemplateMap
+[2025.12.16-13.52.55:853][280]LogCrowdFollowing: Warning: Unable to find RecastNavMesh instance while trying to create UCrowdManager instance
+[2025.12.16-13.52.55:915][280]LogSlate: Window 'PTProject Preview [NetMode: Standalone 0]  (64-bit/PC D3D SM6) OpenXR Oculus (1.115.0)' being destroyed
+[2025.12.16-13.52.55:926][280]LogWorld: UWorld::CleanupWorld for VRTemplateMap, bSessionEnded=true, bCleanupResources=true
+[2025.12.16-13.52.55:929][280]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.16-13.52.55:940][280]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.12.16-13.52.55:947][280]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.16-13.52.56:087][280]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.12.16-13.52.56:089][280]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 21
+[2025.12.16-13.52.56:089][280]LogAudioMixer: Display: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=21, StreamState=4
+[2025.12.16-13.52.56:095][280]LogAudioMixer: Display: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=21, StreamState=2
+[2025.12.16-13.52.56:114][280]LogSlate: Slate User Unregistered.  User Index 8
+[2025.12.16-13.52.56:114][280]LogSlate: Slate User Destroyed.  User Index 8, Is Virtual User: 1
+[2025.12.16-13.52.56:117][280]LogUObjectHash: Compacting FUObjectHashTables data took   1.59ms
+[2025.12.16-13.52.56:285][281]LogPlayLevel: Display: Destroying online subsystem :Context_22
