@@ -6,7 +6,8 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"T:/prueva_tecnica_UE5VR/PTProject/Content/VRTemplate/Blueprints/VRPawn.uasset",
-				"T:/prueva_tecnica_UE5VR/PTProject/Content/VRTemplate/Input/IMC_Default.uasset"
+				"T:/prueva_tecnica_UE5VR/PTProject/Content/VRTemplate/Input/IMC_Default.uasset",
+				"T:/prueva_tecnica_UE5VR/PTProject/Content/VRTemplate/Input/Actions/IA_Grab.uasset"
 			]
 		}
 	]

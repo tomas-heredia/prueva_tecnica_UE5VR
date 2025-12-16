@@ -44,6 +44,8 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputAction* IA_TGrab;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputAction* IA_ObjectGrab;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputMappingContext* MoveMappingContext;
@@ -73,21 +75,39 @@ protected:
 #pragma endregion
 
 #pragma region Pulling
+	
 	UPROPERTY(EditAnywhere, Category = "Telekinetic|Pulling")
-	float TargetPullSpeed = 800.f;
+	float TargetPullSpeed = 10.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Telekinetic|Pulling")
 	float PullForce = 800.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Telekinetic|Pulling")
-	float HoldDistance = 50.f;
+	float HoldDistance = 5.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Telekinetic|Pulling")
 	float MaxPullDistance = 1500.f;
 #pragma endregion
+
+#pragma region Cooldown
+	bool holdObject = false;
+
+	UPROPERTY(EditAnywhere)
+	FTimerHandle CooldownFloating;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Telekinetic|Cooldown")
+	float CooldownFloatingDuration = 2.f;
+
+	UPROPERTY(EditAnywhere)
+	FTimerHandle Cooldown;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Telekinetic|Cooldown")
+	float CooldownDuration = 2.f;
+
+#pragma endregion
 	
 	void TGrab(const FInputActionValue& Value);
 	void TRelece(const FInputActionValue& Value);
+	void TObjectGrab(const FInputActionValue& Value);
+	
 	bool GetTracerOriginAndDirection(FHitResult& Hit) const;
 	bool FindTelekineticTarget() const;
 
@@ -97,8 +117,12 @@ protected:
 	void ExitState(ETelekinesisState State);
 
 	void UpdatePullingState(float DeltaTime);
+
+	void CooldownFloatingStart();
+	void OnCooldownFloatingFinished();
 	
-	void StartHolding();
+	void cooldown();
+	void endCooldown();
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

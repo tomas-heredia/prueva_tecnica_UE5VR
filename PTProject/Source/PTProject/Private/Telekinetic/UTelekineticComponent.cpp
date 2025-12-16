@@ -40,7 +40,8 @@ void UUTelekineticComponent::BeginPlay()
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PC->InputComponent))
 	{
 		EnhancedInputComponent->BindAction(IA_TGrab, ETriggerEvent::Started, this, &UUTelekineticComponent::TGrab);
-		EnhancedInputComponent->BindAction(IA_TGrab, ETriggerEvent::Completed, this, &UUTelekineticComponent::TGrab);
+		EnhancedInputComponent->BindAction(IA_TGrab, ETriggerEvent::Completed, this, &UUTelekineticComponent::TRelece);
+		EnhancedInputComponent->BindAction(IA_ObjectGrab, ETriggerEvent::Triggered, this, &UUTelekineticComponent::TObjectGrab);
 	}
 	
 	TArray<UMotionControllerComponent*> MotionControllers;
@@ -61,7 +62,7 @@ void UUTelekineticComponent::BeginPlay()
 
 void UUTelekineticComponent::TGrab(const FInputActionValue& Value)
 {
-	if(GetTracerOriginAndDirection(CurrentHit))
+	if(GetTracerOriginAndDirection(CurrentHit) and CurrentState == ETelekinesisState::Idle)
 	{
 		UPrimitiveComponent* HitComp = CurrentHit.GetComponent();
 
@@ -80,6 +81,7 @@ void UUTelekineticComponent::TRelece(const FInputActionValue& Value)
 {
 	if (CurrentState == ETelekinesisState::Pulling)
 	{
+		
 		TargetActor = nullptr;
 		TargetPhysicsComp = nullptr;
 		SetState(ETelekinesisState::Idle);
@@ -89,6 +91,26 @@ void UUTelekineticComponent::TRelece(const FInputActionValue& Value)
 		
 		SetState(ETelekinesisState::Cooldown);
 	}
+}
+
+void UUTelekineticComponent::TObjectGrab(const FInputActionValue& Value)
+{
+	const float GripValue = Value.Get<float>();
+	GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Yellow, FString::Printf(TEXT("Grip Value: %f"), GripValue));
+	if (!holdObject)
+	{
+		holdObject = true;
+		return;
+	}
+	else
+	{
+		if (CurrentState == ETelekinesisState::Holding and (GripValue < 0.1f))
+		{
+
+			SetState(ETelekinesisState::Cooldown);
+		}
+	}
+	
 }
 
 
@@ -115,16 +137,7 @@ bool UUTelekineticComponent::GetTracerOriginAndDirection(FHitResult& Hit) const
 
 #if ENABLE_DRAW_DEBUG
 	// Línea del trace
-	DrawDebugLine(
-		GetWorld(),
-		Start,
-		bHit ? Hit.ImpactPoint : End,
-		bHit ? FColor::Red : FColor::Green,
-		false,
-		0.05f,
-		0,
-		1.5f
-	);
+	DrawDebugLine(GetWorld(),Start,bHit ? Hit.ImpactPoint : End,bHit ? FColor::Red : FColor::Green,false,0.05f,0,1.5f);
 
 	// Punto de impacto
 	if (bHit)
@@ -180,11 +193,12 @@ void UUTelekineticComponent::EnterState(ETelekinesisState State)
 		break;
 
 	case ETelekinesisState::Holding:
-		StartHolding();
+		
 		break;
 
 	case ETelekinesisState::Cooldown:
 		
+		cooldown();
 		break;
 
 	default:
@@ -201,14 +215,13 @@ void UUTelekineticComponent::ExitState(ETelekinesisState State)
 		{
 			TargetPhysicsComp->SetSimulatePhysics(false);
 			TargetPhysicsComp->SetEnableGravity(true);
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("sale"));
 			TargetPhysicsComp->SetPhysicsLinearVelocity(FVector::ZeroVector);
 		}
 		break;
 
 	case ETelekinesisState::Holding:
 		
-
+		holdObject = false;
 		break;
 
 	default:
@@ -251,15 +264,43 @@ void UUTelekineticComponent::UpdatePullingState(float DeltaTime)
 	TargetPhysicsComp->SetWorldLocation(NewLocation);
 	if (FVector::Dist(NewLocation, HandLocation) <= HoldDistance)
 	{
+		CooldownFloatingStart();
 		SetState(ETelekinesisState::Holding);
 	}
 
 }
 
-void UUTelekineticComponent::StartHolding()
+void UUTelekineticComponent::CooldownFloatingStart()
 {
-	
+	if (!GetWorld()) return;
+
+	GetWorld()->GetTimerManager().SetTimer(CooldownFloating, this, &UUTelekineticComponent::OnCooldownFloatingFinished, CooldownFloatingDuration, false);
 }
+
+void UUTelekineticComponent::OnCooldownFloatingFinished()
+{
+	if (!TargetPhysicsComp) return;
+	
+	if (!holdObject)
+	{
+		TargetPhysicsComp->SetSimulatePhysics(true);
+		TargetPhysicsComp->SetEnableGravity(true);
+		SetState(ETelekinesisState::Idle);
+	}
+	}
+
+void UUTelekineticComponent::cooldown()
+{
+	GetWorld()->GetTimerManager().SetTimer(Cooldown, this, &UUTelekineticComponent::endCooldown, CooldownDuration, false);
+
+}
+
+void UUTelekineticComponent::endCooldown()
+{
+	SetState(ETelekinesisState::Idle);
+}
+
+
 
 void UUTelekineticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
