@@ -200,6 +200,18 @@ struct Z_Construct_UClass_UUTelekineticComponent_Statics
 		{ "Category", "Telekinetic|Pulling" },
 		{ "ModuleRelativePath", "Public/Telekinetic/UTelekineticComponent.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GripPressThreshold_MetaData[] = {
+		{ "Category", "UTelekineticComponent" },
+		{ "ModuleRelativePath", "Public/Telekinetic/UTelekineticComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GripReleaseThreshold_MetaData[] = {
+		{ "Category", "UTelekineticComponent" },
+		{ "ModuleRelativePath", "Public/Telekinetic/UTelekineticComponent.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_HoldCount_MetaData[] = {
+		{ "Category", "UTelekineticComponent" },
+		{ "ModuleRelativePath", "Public/Telekinetic/UTelekineticComponent.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CooldownFloating_MetaData[] = {
 		{ "Category", "UTelekineticComponent" },
 		{ "ModuleRelativePath", "Public/Telekinetic/UTelekineticComponent.h" },
@@ -236,6 +248,9 @@ struct Z_Construct_UClass_UUTelekineticComponent_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_PullForce;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_HoldDistance;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxPullDistance;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_GripPressThreshold;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_GripReleaseThreshold;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_HoldCount;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_CooldownFloating;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CooldownFloatingDuration;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_Cooldown;
@@ -266,6 +281,9 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticCo
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_PullForce = { "PullForce", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, PullForce), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PullForce_MetaData), NewProp_PullForce_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_HoldDistance = { "HoldDistance", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, HoldDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_HoldDistance_MetaData), NewProp_HoldDistance_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_MaxPullDistance = { "MaxPullDistance", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, MaxPullDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxPullDistance_MetaData), NewProp_MaxPullDistance_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_GripPressThreshold = { "GripPressThreshold", nullptr, (EPropertyFlags)0x0020080000020001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, GripPressThreshold), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GripPressThreshold_MetaData), NewProp_GripPressThreshold_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_GripReleaseThreshold = { "GripReleaseThreshold", nullptr, (EPropertyFlags)0x0020080000020001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, GripReleaseThreshold), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GripReleaseThreshold_MetaData), NewProp_GripReleaseThreshold_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_HoldCount = { "HoldCount", nullptr, (EPropertyFlags)0x0020080000020001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, HoldCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_HoldCount_MetaData), NewProp_HoldCount_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_CooldownFloating = { "CooldownFloating", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, CooldownFloating), Z_Construct_UScriptStruct_FTimerHandle, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CooldownFloating_MetaData), NewProp_CooldownFloating_MetaData) }; // 3834150579
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_CooldownFloatingDuration = { "CooldownFloatingDuration", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, CooldownFloatingDuration), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CooldownFloatingDuration_MetaData), NewProp_CooldownFloatingDuration_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_Cooldown = { "Cooldown", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UUTelekineticComponent, Cooldown), Z_Construct_UScriptStruct_FTimerHandle, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Cooldown_MetaData), NewProp_Cooldown_MetaData) }; // 3834150579
@@ -290,6 +308,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UUTelekin
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_PullForce,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_HoldDistance,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_MaxPullDistance,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_GripPressThreshold,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_GripReleaseThreshold,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_HoldCount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_CooldownFloating,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_CooldownFloatingDuration,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UUTelekineticComponent_Statics::NewProp_Cooldown,
@@ -335,10 +356,10 @@ struct Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject
 		{ ETelekinesisState_StaticEnum, TEXT("ETelekinesisState"), &Z_Registration_Info_UEnum_ETelekinesisState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 237828101U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UUTelekineticComponent, UUTelekineticComponent::StaticClass, TEXT("UUTelekineticComponent"), &Z_Registration_Info_UClass_UUTelekineticComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUTelekineticComponent), 283773742U) },
+		{ Z_Construct_UClass_UUTelekineticComponent, UUTelekineticComponent::StaticClass, TEXT("UUTelekineticComponent"), &Z_Registration_Info_UClass_UUTelekineticComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUTelekineticComponent), 1576726553U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_1260136653(TEXT("/Script/PTProject"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_879893992(TEXT("/Script/PTProject"),
 	Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_prueva_tecnica_UE5VR_PTProject_Source_PTProject_Public_Telekinetic_UTelekineticComponent_h__Script_PTProject_Statics::EnumInfo));

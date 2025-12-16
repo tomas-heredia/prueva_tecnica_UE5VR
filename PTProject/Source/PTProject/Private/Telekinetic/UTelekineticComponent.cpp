@@ -41,7 +41,9 @@ void UUTelekineticComponent::BeginPlay()
 	{
 		EnhancedInputComponent->BindAction(IA_TGrab, ETriggerEvent::Started, this, &UUTelekineticComponent::TGrab);
 		EnhancedInputComponent->BindAction(IA_TGrab, ETriggerEvent::Completed, this, &UUTelekineticComponent::TRelece);
-		EnhancedInputComponent->BindAction(IA_ObjectGrab, ETriggerEvent::Triggered, this, &UUTelekineticComponent::TObjectGrab);
+		EnhancedInputComponent->BindAction(IA_ObjectGrab, ETriggerEvent::Started, this, &UUTelekineticComponent::TObjectGrab);
+		EnhancedInputComponent->BindAction(IA_ObjectGrab, ETriggerEvent::Completed, this, &UUTelekineticComponent::TObjectReleace);
+
 	}
 	
 	TArray<UMotionControllerComponent*> MotionControllers;
@@ -86,31 +88,41 @@ void UUTelekineticComponent::TRelece(const FInputActionValue& Value)
 		TargetPhysicsComp = nullptr;
 		SetState(ETelekinesisState::Idle);
 	}
-	if (CurrentState == ETelekinesisState::Holding)
-	{
-		
-		SetState(ETelekinesisState::Cooldown);
-	}
+
 }
 
 void UUTelekineticComponent::TObjectGrab(const FInputActionValue& Value)
 {
-	const float GripValue = Value.Get<float>();
-	GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Yellow, FString::Printf(TEXT("Grip Value: %f"), GripValue));
-	if (!holdObject)
-	{
-		holdObject = true;
-		return;
-	}
-	else
-	{
-		if (CurrentState == ETelekinesisState::Holding and (GripValue < 0.1f))
-		{
 
-			SetState(ETelekinesisState::Cooldown);
-		}
-	}
+	if (CurrentState != ETelekinesisState::Holding)
+		return;
+
+	if (holdObject)
+		return;
+	HoldCount++;
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, TEXT("Object Held"));
+	holdObject = true;
+	GetWorld()->GetTimerManager().ClearTimer(CooldownFloating);
 	
+	
+}
+
+void UUTelekineticComponent::TObjectReleace(const FInputActionValue& Value)
+{
+	if (CurrentState != ETelekinesisState::Holding)
+		return;
+
+	if (!holdObject)
+		return;
+	HoldCount = FMath::Max(0, HoldCount - 1);
+	holdObject = false;
+
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, TEXT("Object Releace"));
+	if (HoldCount == 0)
+	{
+
+		SetState(ETelekinesisState::Cooldown);
+	}
 }
 
 
@@ -220,7 +232,7 @@ void UUTelekineticComponent::ExitState(ETelekinesisState State)
 		break;
 
 	case ETelekinesisState::Holding:
-		
+		HoldCount = 0;
 		holdObject = false;
 		break;
 
@@ -264,8 +276,11 @@ void UUTelekineticComponent::UpdatePullingState(float DeltaTime)
 	TargetPhysicsComp->SetWorldLocation(NewLocation);
 	if (FVector::Dist(NewLocation, HandLocation) <= HoldDistance)
 	{
-		CooldownFloatingStart();
 		SetState(ETelekinesisState::Holding);
+		if (!holdObject)
+		{
+			CooldownFloatingStart();
+		}
 	}
 
 }
@@ -279,10 +294,12 @@ void UUTelekineticComponent::CooldownFloatingStart()
 
 void UUTelekineticComponent::OnCooldownFloatingFinished()
 {
+
 	if (!TargetPhysicsComp) return;
 	
 	if (!holdObject)
 	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("floating end"));
 		TargetPhysicsComp->SetSimulatePhysics(true);
 		TargetPhysicsComp->SetEnableGravity(true);
 		SetState(ETelekinesisState::Idle);
@@ -297,6 +314,13 @@ void UUTelekineticComponent::cooldown()
 
 void UUTelekineticComponent::endCooldown()
 {
+	GetWorld()->GetTimerManager().ClearTimer(Cooldown);
+	GetWorld()->GetTimerManager().ClearTimer(CooldownFloating);
+
+	
+	TargetActor = nullptr;
+	TargetPhysicsComp = nullptr;
+	holdObject = false;
 	SetState(ETelekinesisState::Idle);
 }
 

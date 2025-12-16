@@ -89,6 +89,15 @@ protected:
 	float MaxPullDistance = 1500.f;
 #pragma endregion
 
+#pragma region Holding
+	UPROPERTY(VisibleAnywhere)
+	float GripPressThreshold = 0.6f;
+	UPROPERTY(VisibleAnywhere)
+	float GripReleaseThreshold = 0.2f;
+	UPROPERTY(VisibleAnywhere)
+	int32 HoldCount = 0;
+#pragma endregion
+
 #pragma region Cooldown
 	bool holdObject = false;
 
@@ -107,6 +116,7 @@ protected:
 	void TGrab(const FInputActionValue& Value);
 	void TRelece(const FInputActionValue& Value);
 	void TObjectGrab(const FInputActionValue& Value);
+	void TObjectReleace(const FInputActionValue& Value);
 	
 	bool GetTracerOriginAndDirection(FHitResult& Hit) const;
 	bool FindTelekineticTarget() const;
