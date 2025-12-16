@@ -3196,3 +3196,6 @@ Detoured run took 1.7s
 [2025.12.16-13.00.54:270][930]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/VRTemplate/Blueprints/VRPawn_Auto3
 [2025.12.16-13.00.54:270][930]LogSavePackage: Moving '../../../../../prueva_tecnica_UE5VR/PTProject/Saved/VRPawn_Auto3147F31894D240C9D7E3D2FA0E42D2832.tmp' to '../../../../../prueva_tecnica_UE5VR/PTProject/Saved/Autosaves/Game/VRTemplate/Blueprints/VRPawn_Auto3.uasset'
 [2025.12.16-13.00.54:293][930]LogFileHelpers: Auto-saving content packages took 0.306
+[2025.12.16-13.02.51:013][281]LogEOSSDK: LogEOS: Updating Product SDK Config, Time: 35284.175781
+[2025.12.16-13.02.52:015][285]LogEOSSDK: LogEOS: SDK Config Product Update Request Completed - No Change
+[2025.12.16-13.02.52:015][285]LogEOSSDK: LogEOS: ScheduleNextSDKConfigDataUpdate - Time: 35284.847656, Update Interval: 306.059143
